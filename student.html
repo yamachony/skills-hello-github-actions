@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>リアルタイム授業フィードバック（生徒用）</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 400px; margin: auto; padding: 20px; }
+  button { font-size: 2em; padding: 10px; margin: 10px; width: 80%; }
+</style>
+<script>
+  function sendVote(choice) {
+    localStorage.setItem('lastChoice', choice);
+    alert("選択を送信しました: " + choice + " (このデモはローカル保存のみです)");
+  }
+  window.onload = function() {
+    const lastChoice = localStorage.getItem('lastChoice');
+    if (lastChoice) {
+      document.getElementById('status').textContent = "前回の選択: " + lastChoice;
+    }
+  }
+</script>
+</head>
+<body>
+<h1>授業の理解度を教えてね</h1>
+<p>今の説明はどう？</p>
+<button onclick="sendVote('わかる')">😃 わかる</button>
+<button onclick="sendVote('どちらとも')">😐 どちらとも</button>
+<button onclick="sendVote('わからない')">😟 わからない</button>
+<p id="status" style="margin-top: 20px; color: gray;"></p>
+</body>
+</html>

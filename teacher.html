@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>リアルタイム授業フィードバック（教師用）</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; }
+  .bar { height: 30px; background-color: #4CAF50; margin: 10px 0; color: white; padding-left: 10px; }
+</style>
+<script>
+  window.onload = function() {
+    document.getElementById('info').textContent = "このオフライン版は生徒の反応を集計できません。オンライン版での使用を推奨します。";
+  }
+</script>
+</head>
+<body>
+<h1>授業の理解度リアルタイム集計（教師用）</h1>
+<p id="info" style="color: red;"></p>
+<p>オンライン接続がないため、このページでは集計ができません。</p>
+<p>オンライン版の完成後に使ってください。</p>
+</body>
+</html>
